@@ -26,8 +26,9 @@ class OutStandingDoctor extends Component {
   }
 
   handleViewDetailDoctor = (doctor) => {
-    console.log("hoidanit chanel view infor: ", doctor);
-    this.props.history.push(`detail-doctor/${doctor.id}`);
+    if (this.props.history) {
+      this.props.history.push(`detail-doctor/${doctor.id}`);
+    }
   };
 
   render() {
@@ -72,6 +73,9 @@ class OutStandingDoctor extends Component {
                             className="bg-image section-outstanding-doctor"
                             style={{
                               background: `url(${imageBase64})`,
+                              backgroundSize: "cover",
+                              backgroundPosition: "center center",
+                              backgroundRepeat: "no-repeat",
                             }}
                           />
                         </div>
