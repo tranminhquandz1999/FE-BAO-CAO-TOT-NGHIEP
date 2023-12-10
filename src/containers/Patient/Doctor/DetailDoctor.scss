@@ -1,5 +1,5 @@
 .doctor-detail-container {
-  height: 500px;
+  min-height: 500px;
 
   .intro-doctor {
     display: flex;
@@ -12,6 +12,7 @@
       height: 120px;
       border-radius: 50%;
       margin: 10px 20px;
+      background-size: contain;
     }
 
     .content-right {
@@ -27,6 +28,10 @@
       }
       .down {
         padding-top: 10px;
+
+        .like-share-plugin {
+          margin: 10px 0 20px 0;
+        }
       }
     }
   }
@@ -55,11 +60,16 @@
     padding-right: 10px;
     margin-bottom: 20px;
 
+    h1,
+    h2,
     h3 {
       font-size: 17px;
     }
     img {
       // width: 100%;
     }
+  }
+  .comment-doctor {
+    padding: 10px 100px;
   }
 }

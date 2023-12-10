@@ -6,6 +6,7 @@ import * as actions from "../../../store/actions";
 import { LANGUAGES } from "../../../utils";
 import { FormattedMessage } from "react-intl";
 import { withRouter } from "react-router";
+import HomeFooter from "../HomeFooter";
 
 class OutStandingDoctor extends Component {
   constructor(props) {
@@ -35,64 +36,71 @@ class OutStandingDoctor extends Component {
     let arrDoctors = this.state.arrDoctors;
     let { language } = this.props;
     // arrDoctors = arrDoctors.concat(arrDoctors).concat(arrDoctors);
-    console.log("hoidanit chanel: ", arrDoctors);
+    // console.log("hoidanit chanel: ", arrDoctors);
     return (
-      <div className="section-share section-outstanding-doctor">
-        <div className="section-container">
-          <div className="section-header">
-            <span className="title-section">
-              <FormattedMessage id="homepage.outstanding-doctor" />
-            </span>
-            <button className="btn-section">
-              {" "}
-              <FormattedMessage id="homepage.more-infor" />
-            </button>
-          </div>
-          <div className="section-body">
-            <Slider {...this.props.settings}>
-              {arrDoctors &&
-                arrDoctors.length > 0 &&
-                arrDoctors.map((item, index) => {
-                  let imageBase64 = "";
-                  if (item.image) {
-                    imageBase64 = new Buffer(item.image, "base64").toString(
-                      "binary"
-                    );
-                  }
-                  let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName} `;
-                  let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
-                  return (
-                    <div
-                      className="section-customize"
-                      key={index}
-                      onClick={() => this.handleViewDetailDoctor(item)}
-                    >
-                      <div className="customize-border">
-                        <div className="outer-bg">
-                          <div
-                            className="bg-image section-outstanding-doctor"
-                            style={{
-                              background: `url(${imageBase64})`,
-                              backgroundSize: "cover",
-                              backgroundPosition: "center center",
-                              backgroundRepeat: "no-repeat",
-                            }}
-                          />
-                        </div>
-                        <div className="position text-center">
-                          <div>
-                            {language === LANGUAGES.VI ? nameVi : nameEn}
+      <>
+        <div className="section-share section-outstanding-doctor">
+          <div className="section-container">
+            <div className="section-header">
+              <span className="title-section">
+                <FormattedMessage id="homepage.outstanding-doctor" />
+              </span>
+              {/* <button className="btn-section">
+                {" "}
+                <FormattedMessage id="homepage.more-infor" />
+              </button> */}
+            </div>
+            <div className="section-body">
+              <Slider {...this.props.settings}>
+                {arrDoctors &&
+                  arrDoctors.length > 0 &&
+                  arrDoctors.map((item, index) => {
+                    let imageBase64 = "";
+                    if (item.image) {
+                      imageBase64 = new Buffer(item.image, "base64").toString(
+                        "binary"
+                      );
+                    }
+                    let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName} `;
+                    let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
+                    let nameClinicVi = ` ${item.address}`;
+                    // let nameClinicEn = ` ${item.nameClinic}`;
+                    return (
+                      <div
+                        className="section-customize"
+                        key={index}
+                        onClick={() => this.handleViewDetailDoctor(item)}
+                      >
+                        <div className="customize-border">
+                          <div className="outer-bg">
+                            <div
+                              className="bg-image section-outstanding-doctor"
+                              style={{
+                                background: `url(${imageBase64})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center center",
+                                backgroundRepeat: "no-repeat",
+                              }}
+                            />
                           </div>
-                          <div>Cơ Xương Khớp 1</div>
+                          <div className="position text-center">
+                            <div>
+                              {language === LANGUAGES.VI ? nameVi : nameEn}
+                            </div>
+                            <div>
+                              <span>Khu vực: </span>
+                              {language === LANGUAGES.VI ? nameClinicVi : ""}
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
-            </Slider>
+                    );
+                  })}
+              </Slider>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

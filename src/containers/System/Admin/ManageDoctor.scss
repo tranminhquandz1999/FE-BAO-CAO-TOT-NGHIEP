@@ -44,11 +44,16 @@
     padding-bottom: 30px;
 
     .content-left {
-      width: 40%;
+      width: 35%;
     }
 
     .content-right {
-      width: 60%;
+      display: flex;
+      flex-direction: column;
+      width: 64%;
+      .form-control {
+        height: 60px !important;
+      }
     }
   }
 }

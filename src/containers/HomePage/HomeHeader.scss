@@ -19,7 +19,8 @@
       align-items: center;
 
       .header-logo {
-        height: 100%;
+        margin-top: 5px;
+        height: 230%;
         width: 100%;
         cursor: pointer;
         transform: scale(0.5, 0.5);
@@ -96,8 +97,11 @@
 }
 
 .home-header-banner {
-  background: url("../../assets/header-background.jpg");
-  height: 485px;
+  background: url("../../assets/navbar1.png");
+  // background: url("../../assets/navbar2.png");
+  // background: url("../../assets/navbar3.jpg");
+  // background: url("../../assets/navbar4.jpg");
+  height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -105,10 +109,10 @@
   flex-direction: column;
 
   .content-up {
-    background-image: linear-gradient(
-      rgba(126, 126, 126, 025),
-      rgba(255, 255, 255, 0.1)
-    );
+    // background-image: linear-gradient(
+    //   rgba(126, 126, 126, 025),
+    //   rgba(255, 255, 255, 0.1)
+    // );
     padding-top: 15px;
     height: 65%;
     .title1 {
@@ -194,3 +198,22 @@
     }
   }
 }
+// .navbar {
+//   overflow: hidden;
+//   background-color: #333;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: center;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .navbar img {
+//   width: 100%;
+//   height: auto;
+//   transition: transform 2s ease-in-out;
+// }
+
+// .navbar img:hover {
+//   transform: scale(1.2);
+// }

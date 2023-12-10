@@ -1,0 +1,28 @@
+.section-about-1 {
+  background-color: red !important;
+}
+
+.content-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .about-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    .about-paper {
+      height: 65px;
+      object-fit: cover;
+      border-radius: 10px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .about-img {
+        height: 35px;
+      }
+    }
+  }
+}

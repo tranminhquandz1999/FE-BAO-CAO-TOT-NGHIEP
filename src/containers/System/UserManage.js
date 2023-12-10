@@ -137,7 +137,7 @@ class UserManage extends Component {
           />
         )}
 
-        <div className="title">Manege users with quan</div>
+        <div className="title">Quản lý thông tin lịch khám bênh khác hàng</div>
         <div className="mx1">
           <button
             className=" btn btn-primary px-3"

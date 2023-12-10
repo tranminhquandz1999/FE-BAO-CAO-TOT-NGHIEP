@@ -1,0 +1,13 @@
+.clinic-child {
+  cursor: pointer;
+  .bg-image {
+    width: 75%; /* Đảm bảo rằng hình ảnh sẽ có chiều rộng 100% của parent */
+    height: 200px; /* Điều chỉnh chiều cao theo nhu cầu của bạn */
+  }
+  .clinic-name {
+    padding: 10px 0;
+    &:hover {
+      color: #45c3d2;
+    }
+  }
+}

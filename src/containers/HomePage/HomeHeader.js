@@ -1,12 +1,17 @@
 import React, { Component } from "react";
+import { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import "./HomeHeader.scss";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/de.png";
 import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils";
 import { withRouter } from "react-router";
 import { changeLanguageApp } from "../../store/actions";
+import image1 from "../../assets/navbar1.png";
+import image2 from "../../assets/navbar2.png";
+import image3 from "../../assets/navbar3.jpg";
+import image4 from "../../assets/navbar4.jpg";
 class HomeHeader extends Component {
   changeLanguage = (language) => {
     this.props.changeLanguageAppRedux(language);
@@ -18,6 +23,22 @@ class HomeHeader extends Component {
       this.props.history.push(`/home`);
     }
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentIndex: 0,
+    };
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(this.nextImage, 3000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   render() {
     let language = this.props.language;
     return (
@@ -109,10 +130,10 @@ class HomeHeader extends Component {
             <div className="content-up">
               <div className="title1">
                 {" "}
-                <FormattedMessage id="banner.title1" />
+                {/* <FormattedMessage id="banner.title1" /> */}
               </div>
               <div className="title2">
-                <FormattedMessage id="banner.title2" />
+                {/* <FormattedMessage id="banner.title2" /> */}
               </div>
               <div className="search">
                 <i className="fa fa-search"></i>
@@ -171,6 +192,13 @@ class HomeHeader extends Component {
                 </div>
               </div>
             </div>
+
+            {/* <div className="navbar">
+              <img src={image1} alt="Image 1" />
+              <img src={image2} alt="Image 2" />
+              <img src={image3} alt="Image 3" />
+              <img src={image4} alt="Image 4" />
+            </div> */}
           </div>
         )}
       </React.Fragment>

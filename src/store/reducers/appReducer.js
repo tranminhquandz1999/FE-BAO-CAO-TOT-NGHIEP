@@ -32,7 +32,7 @@ const appReducer = (state = initialState, action) => {
         },
       };
     case actionTypes.CHANGE_LANGUAGE:
-      console.log("hoidanit chek redux: ", action);
+      // console.log("hoidanit chek redux: ", action);
       return {
         ...state,
         language: action.language,
